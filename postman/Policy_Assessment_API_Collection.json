@@ -1,0 +1,129 @@
+{
+  "info": {
+    "name": "Policy_Assessment_API_Collection",
+    "_postman_id": "1234-5678-policy-assessment",
+    "description": "Collection for assessment APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload CSV",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "<path-to-data-sheet.csv>"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "upload"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Policies by Username",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/policy/search/Ulysses Forbush",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "policy",
+            "search",
+            "Ulysses Forbush"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Aggregate Policies",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/policy/aggregate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "policy",
+            "aggregate"
+          ]
+        }
+      }
+    },
+    {
+      "name": "list message",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/message",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "message"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Schedule Message (POST /api/main)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"message\": \"Reminder\", \"day\": \"mon\", \"time\": \"14:30\" }"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/message",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "message"
+          ]
+        }
+      }
+    }
+  ]
+}
