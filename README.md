@@ -2,13 +2,12 @@
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and update if needed.
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    npm install
    ```
-3. Start MongoDB locally (this project expects `mongodb://localhost:27017/policy_assessment`).
-4. Start server (recommended via monitor which auto-restarts on high CPU):
+2. Start MongoDB locally (this project expects `mongodb://localhost:27017/policy_assessment`).
+3. Start server (recommended via monitor which auto-restarts on high CPU):
    ```bash
    npm start
    ```
